@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ming.dao.EmpMapperCustom">
+    <select id="getEmpList" resultType="com.ming.model.Emp">
+     SELECT
+          e.emp_id,
+          e.emp_name,
+          e.gender,
+          e.email,
+          e.d_id
+      FROM
+          tbl_emp AS e
+    </select>
+</mapper>
