@@ -4,19 +4,25 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
         <setting name="mapUnderscoreToCamelCase" value="false"/>
     </settings>
     <typeAliases>
         <package name="com.ming.model"/>
     </typeAliases>
-    <!--配置mapper
-本来要配置mappers,因为我们要使用spring和mybatis的整合包进行mapper的扫描，所以不需要配置
-加载mapper,必须遵循：mapper.xml和mapper.java文件同名写在一个目录
--->
-    <!--    <mappers>
-            <package name="com.ming.dao"/>
-        </mappers>-->
     <plugins>
-        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--调整分页的合理化，比如上一页不能为0或-1等-->
+            <property name="reasonable" value="true"/>
+        </plugin>
     </plugins>
+    <!--配置mapper
+    本来要配置mappers,因为我们要使用spring和mybatis的整合包进行mapper的扫描，所以不需要配置
+    加载mapper,必须遵循：mapper.xml和mapper.java文件同名写在一个目录
+    -->
+<!--    <mappers>
+        <package name="com.ming.dao"/>
+    </mappers>-->
+
 </configuration>

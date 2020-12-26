@@ -34,6 +34,7 @@
             <tx:method name="*" propagation="REQUIRED" read-only="false"/>
             <tx:method name="find*" propagation="SUPPORTS" read-only="true"></tx:method>
             <tx:method name="get*" propagation="SUPPORTS" read-only="true"></tx:method>
+            <tx:method name="delete*" propagation="SUPPORTS" read-only="true"></tx:method>
         </tx:attributes>
     </tx:advice>
     <!--配置aop-->

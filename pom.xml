@@ -100,7 +100,12 @@
       <version>3.1.0</version>
       <scope>provided</scope>
     </dependency>
-
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jsp-api</artifactId>
+      <version>2.0</version>
+      <scope>provided</scope>
+    </dependency>
     <!-- 单元测试 -->
     <!-- https://mvnrepository.com/artifact/junit/junit -->
     <dependency>
@@ -115,6 +120,11 @@
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.16</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.12.1</version>
     </dependency>
     <!-- 处理json -->
     <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
@@ -139,15 +149,14 @@
     </dependency>
   </dependencies>
 
-<!--  <build>
+  <build>
     <finalName>ssmpro</finalName>
-    <pluginManagement>&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;
+    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-        &lt;!&ndash; see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging &ndash;&gt;
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
@@ -172,7 +181,17 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat-maven-plugin</artifactId>
+          <version>2.2</version>
+          <configuration>
+            <port>8099</port>
+            <uriencoding>UTF-8</uriencoding>
+            <path>/</path>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
-  </build>-->
+  </build>
 </project>
