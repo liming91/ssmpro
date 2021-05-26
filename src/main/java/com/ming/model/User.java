@@ -2,10 +2,9 @@ package com.ming.model;
 
 public class User {
     private Integer id;
-            private String name;
-                    private String password;
+    private String name;
+    private String password;
     private String iphone;
-
 
     public Integer getId() {
         return id;
